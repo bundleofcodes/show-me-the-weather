@@ -1,0 +1,23 @@
+
+
+.container-fluid {
+    border: 2px solid red;
+}
+
+.search-box {
+    border: 2px solid green;
+}
+
+#today-weather {
+    border: 2px solid purple;
+    min-height: 200px;
+}
+
+.container-forecast {
+    border: 2px solid blue;
+    min-height: 300px;
+}
+
+.all-weather {
+    border: 2px solid black;
+}
