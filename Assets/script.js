@@ -68,14 +68,14 @@ async function findCurrentWeather() {
         .then(function (data) {
             console.log(data);
             nameEl.textContent = data.name;
-            currentTempEl.textContent = "Current Temperature: " + data.main.temp;
-            currentHumidityEl.textContent = "humidity: " + data.main.humidity;
-            currentWindEl.textContent = "Wind: " + data.wind.speed;
+            currentTempEl.textContent = "Current Temperature: " + data.main.temp + " \u2109";
+            currentHumidityEl.textContent = "humidity: " + data.main.humidity + "%";
+            currentWindEl.textContent = "Wind: " + data.wind.speed + " MPH";
             // var image = $('<img class="imgsize">').attr('src', 'http://openweathermap.org/img/w/' + data.weather[0].icon + '.png');
             // currentPicEl.appendChild(image);     
-            let locationIcon = document.querySelector('.weather-icon');
-            let {icon} ='http://openweathermap.org/img/w/' + data.weather[0].icon;
-            locationIcon.innerHTML = `<img src="/${icon}.png">;`        
+            let locationIcon = document.querySelector('#current-picture');
+            let icon =`https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
+            locationIcon.setAttribute('src', icon)        
         });
     // let response = await fetch(requestWeather);
     // console.log("response",response);
