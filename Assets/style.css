@@ -1,23 +1,36 @@
 
 
+header {
+    display: flex;
+    justify-content: center;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
 .container-fluid {
-    border: 2px solid red;
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    max-width: 2000px;
+    /* margin-left: 6; */
 }
 
 .search-box {
-    border: 2px solid green;
+    border: 1px solid black;
 }
 
 #today-weather {
-    border: 2px solid purple;
+    border: 1px solid black;
     min-height: 200px;
+    /* max-width: 1700px */
 }
 
 .container-forecast {
-    border: 2px solid blue;
+    border: 1px solid black;
     min-height: 300px;
+    /* max-width: 2400px; */
 }
 
 .all-weather {
-    border: 2px solid black;
+    border: 1px solid black;
 }
