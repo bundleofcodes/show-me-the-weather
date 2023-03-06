@@ -1,6 +1,4 @@
-$(document).ready(function (){
-    console.log('ready')
-})
+
 let cityEl = document.getElementById("enter-city");
 let searchEl = document.getElementById("search-button");
 let clearEl = document.getElementById("clear-history");
@@ -15,24 +13,20 @@ var fivedayEl = document.getElementById("fiveday-header");
 var todayWeatherEl = document.getElementById("today-weather");
 let searchHistory = JSON.parse(localStorage.getItem("search")) || [];
 
-let apiKey = "e976410ae238d2e283ac7ed7040e14e2";
+// let apiKey = "e976410ae238d2e283ac7ed7040e14e2";
 
 function getWeather(cityName) {
+    let apiKey = "e976410ae238d2e283ac7ed7040e14e2";
     // Execute a current weather get request from open weather api
-    let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + apiKey;
+    let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + apiKey + "&callback=displayWeather";
 }
-
-    // $("#search-button").on("click", function() {
-    //     var newCity
-    // })
-
-
 
 
     let citiesArray = [];
 
 
     function init() {
+
         generateCityList();
     }
 
@@ -49,12 +43,12 @@ function getWeather(cityName) {
         }
     }
 
-    $("search-button").on("click", function () {
+    $("#search-button").on("click", function () {
         findCurrentWeather();
         $("#enter-city").val("");
     });
 
-    $("clear-button").on("click", function () {
+    $("#clear-button").on("click", function () {
         localStorage.clear();
         $(searchedCities).empty();
     });
